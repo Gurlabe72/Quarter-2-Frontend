@@ -1,0 +1,10 @@
+#the-div {
+    width: 400px;
+    height: 400px;
+    background-color: blue; 
+}
+
+#the-text {
+    font-size: 30px; 
+    color: blanchedalmond;
+}
