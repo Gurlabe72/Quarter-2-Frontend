@@ -1,62 +1,60 @@
-const OnButtonClick = () => {
-    console.log('Sup')
-    let text = document.querySelector('#the-text')
-    let list = document.querySelector('#the-list')
-   //the code below stops the list from adding over and over 
-   //take it off and click the  button
-   
 
-
+const getDrivers= () => {
+let list = document.querySelector('#the-list')
 list.innerHTML = '' 
 axios.get('http://localhost:3000/drivers').then(result => {
     let data = result.data
     console.log(data);
     data.forEach(element => {
         let listItem = document.createElement('li')
-        listItem.innerHTML = `This hazard was reported by ${element.drivers_id} at this location ${element.location}`
+        listItem.innerHTML = `hazard # ${element.id} was reported by ${element.first_name} ${element.last_name} . This is their bio ${element.bio} Is this person a trusted user? ${element.is_trusted}`
         list.appendChild(listItem)
     })
-});
-    list.innerHTML = '' 
+});  
+}
+const doDrivers = () => {
+    let button = document.querySelector('#the-drivers-button')
+    button.addEventListener('click', getDrivers)
+};
+const getHazards = () => {
+    let list = document.querySelector('#the-list')
+      list.innerHTML = '' 
     axios.get('http://localhost:3000/hazards').then(result => {
         let data = result.data
-        console.log(data);
         data.forEach(element => {
             let listItem = document.createElement('li')
-            listItem.innerHTML = `This hazard was reported by ${element.drivers_id} at this location ${element.location}`
+            listItem.innerHTML = `This was the type of hazard reported ${element.hazards_type} at this location ${element.location}`
             list.appendChild(listItem)
         })
     });
 }
-list.innerHTML = '' 
+const doHazards = () => {
+    let button = document.querySelector('#the-hazards-button')
+    button.addEventListener('click', getHazards)
+};
+
+const getAccidents = () => {
+    let list = document.querySelector('#the-list')
+    list.innerHTML = '' 
 axios.get('http://localhost:3000/accidents').then(result => {
     let data = result.data
-    console.log(data);
     data.forEach(element => {
         let listItem = document.createElement('li')
-        listItem.innerHTML = `This hazard was reported by ${element.drivers_id} at this location ${element.location}`
+        listItem.innerHTML = `${element.comment}`
         list.appendChild(listItem)
     })
 });
-
-
-
-const doDrivers = () => {
-    let button = document.querySelector('#the-drivers-button')
-    button.addEventListener('click', OnButtonClick)
-}
-
-const doHazards = () => {
-    let button = document.querySelector('#the-hazards-button')
-    button.addEventListener('click', OnButtonClick)
 }
 const doAccidents = () => {
     let button = document.querySelector('#the-accidents-button')
-    button.addEventListener('click', OnButtonClick)
+    button.addEventListener('click', getAccidents)
 }
+
 document.addEventListener(
     'DOMContentLoaded', 
-    doDrivers,
-    doHazards,
-    doAccidents
+    function(){
+        doDrivers()
+        doHazards()
+        doAccidents()
+    }   
 )
