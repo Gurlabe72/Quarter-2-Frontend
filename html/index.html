@@ -5,21 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="../assets/css/styles.css">
     <title>Hello </title>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
-    <script src="../assets/js/index.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../assets/js/fetch.js" type="text/javascript" charset="utf-8"></script>
     <script src="../assets/js/create.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
-    <h1> Hey Foo, What up </h1>
-    <!-------------------------- FETCH BUTTONS-------------------------->
+    <h1> Hello! Welcome to Trucker </h1>
+     
     <div id='the-div'>
     <p id='the-text'></p>
      <ul id='the-list'></ul>
-    <button id='the-drivers-button' type='bottom' name='button' >Click for Drivers </button>
-    <button id='the-hazards-button' type='bottom' name='button' >Click for Hazards </button>
-    <button id='the-accidents-button' type='bottom' name='button' >Click for Accidents</button>
-    </div>
-    <!-------------------------- CREATE DRIVER -------------------------->
+    <!-------------------------- GET  DRIVER -------------------------->  
+    <!-------------------------- CREATE DRIVER -------------------------->   
+    <h1>Create Your Driver Profile! </h1>
     <div class="container">
         <form id="form" class="form" onsubmit="createDriver(event)">
           <div class="form-group">
@@ -32,18 +31,100 @@
           </div>
           <div class="form-group">
             <label for="bio">Bio:</label>
-            <input type="text" class="form-control" rows="5" name="tag" id="bio">
-          </div>
-      <!-- How do I show the boolean?? -->
+            <input type="text" class="form-control" rows="5" name="tag" id="bio"></div>
+            <!-------------------------- FETCH DRIVERS--------------------------> 
+            <button id='the-drivers-button' type='bottom' name='button' >Click for Drivers </button> 
+          </div> 
+    <!--------------------------DELETE DRIVER-------------------------->
+<div id="delete-div">
+<h1>Delete You Entry Here</h1>
+<button id='delete-driver-button' type='bottom' name='button' >Click to Delete</button>
+</div>
+</form>
+</div>
+</div>
+<!------------------------------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------------------>
 
 
-
-      <!-- How do I show the boolean?? -->
+ 
+    <!-------------------------- GET  HAZARD -------------------------->
+    <!-------------------------- CREATE HAZARD -------------------------->
+    <div id='the-div'>
+      <p id='the-text'></p>
+       <ul id='the-list'></ul>
+    <h1>Post Your Hazard Here </h1>
+    <div class="container">
+        <form id="form" class="form" onsubmit="createHazard(event)">
           <div class="form-group">
-              <button type="submit" class="btn btn-info btn-large">Submit</button>
+            <label for="hazards-type">Can you explain the hazard?:</label>
+            <input id="hazards-type" type="text" class="form-control" name="hazards-type">
           </div>
-        </form>
+          <div class="form-group">
+            <label for="location">Where is this Hazard Located?</label>
+            <textarea id="location" class="form-control"  name="location" value="location"></textarea>
+          </div>   
+    <!-------------------------- FETCH HAZARDS-------------------------->
+    <button id='the-hazards-button' type='bottom' name='button' >Click for Hazards </button>
+    <!--------------------------DELETE HAZARD-------------------------->
+    <div id="delete-div">
+      <h1>Delete You Entry Here</h1>
+      <button id='delete-hazard-button' type='bottom' name='button' >Click to Delete</button>
+      </div> 
+    </form>
+  </div>
+  </div>
+      
+<!------------------------------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------------------>
+
+    </div>
+    <!-------------------------- GET  ACCIDENT -------------------------->
+    <!-------------------------- CREATE ACCIDENT -------------------------->    
+    <div id='the-div'>
+      <p id='the-text'></p>
+       <ul id='the-list'></ul>
+    <h1> Any Other Additional Comments? </h1>
+    <div class="container">
+        <form id="form" class="form" onsubmit="createAccident(event)">
+          <div class="form-group">
+            <label for="comments">Comment:</label>
+            <input id="comments" type="text" class="form-control" name="comments">
+          </div>
+    <!-------------------------- FETCH ACCIDENTS-------------------------->
+    <button id='the-accidents-button' type='bottom' name='button' >Click for Accidents</button>       
+    <!--------------------------DELETE ACCIDENT-------------------------->
+    <div id="delete-div">
+      <h1>Delete You Entry Here</h1>
+      <button id='delete-accident-button' type='bottom' name='button' >Click to Delete</button>
       </div>
-<!--  -->
+      <script src="./assets/js/create.js"></script>
+      <script src="./assets/js/destroy.js"></script>
+      <script src="./assets/js/fetch.js"></script>
+      <script src="./assets/js/get.js"></script>
 </body>
 </html>
+<!-- ------------------------UPDATE------------------------
+      <h1>Update your Profile Here</h1>
+      <div class="container">
+        <form id="form" class="form" onsubmit="updateDriver(event)">
+          <div class="form-group">
+            <label for="first-name">First Name:</label>
+            <input id="first-name" type="text" class="form-control" name="first-name">
+          </div>
+          <div class="form-group">
+            <label for="last-name">Last Name:</label>
+            <textarea id="last-name" class="form-control"  name="last-name" value=""></textarea>
+          </div>
+          <div class="form-group">
+            <label for="bio">Bio:</label>
+            <input type="text" class="form-control" rows="5" name="tag" id="bio">
+          </div> -->
+      <!-- How do I show the boolean?? -->
+
+
+      <!-- How do I show the boolean?? -->

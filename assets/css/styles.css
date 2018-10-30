@@ -1,4 +1,5 @@
 #the-div {
+    align-self: center;
     width: 400px;
     height: 400px;
     background-color: palevioletred; 
@@ -8,3 +9,123 @@
     font-size: 30px; 
     color: blanchedalmond;
 } 
+
+body {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    background:white;
+    height:auto;
+}
+
+h1 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 2.5rem;
+    /* makes the first letter of ever word uppercase  */
+    text-transform: uppercase;
+    margin:0;
+}
+
+
+img {
+/* display block is used to make an element occupy the width of that line */
+    display: block;
+    /* max width is always 100% of the page */
+    width:100%;
+
+}
+
+main {
+    max-width: 900px;
+    margin: auto;
+/* rgba stands for red, green, blue, and a(alpha) is opacity
+The pixel values are the horizontal offset, the vertical offset, and the blur */
+    box-shadow: 30px 0px 40px rgba(0,0,0,0.4),
+    -30px 0px 40px rgba(0,0,0,0.4);
+}
+
+#start {
+    background: violet;
+}
+
+#start-text {
+    /* be ready to explain "flex"  */
+    display: flex;
+    /* vw is viewport widths vh is vertical heights: from 
+    my understading it is a unit of measurment that is 
+    used to delegate the amount of space their element occupies on a page. */
+    flex: 0 1 40vw;
+    height: 50 vh; 
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-right:1rem;
+    padding-left: 1rem;
+}
+/* do this with bootstrap. This is adding
+ the white border to the button.  */
+ 
+#start-text h2{
+    color:white;
+}
+/* landing image is supposed to take up half the page 
+its not working */
+
+ #start-image {
+     /* background image will be applied using css but it wont show
+     up until you position it  */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50vh;
+    /* 0 and 1 stand for flex grow and flex shrink */
+    flex: 0 1 60vh;
+    margin: 0;
+}
+
+
+#header {
+    padding:1.5rem;
+    text-align: center;
+    background: black;
+    color: white;
+
+}
+.caption {
+    padding:0.8rem;
+    text-align: center;
+}
+ 
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin: auto;
+    color: black;
+}
+
+footer h3 {
+    font-size:3rem;
+    margin-bottom: 0; 
+}
+
+@media only screen and (min-width: 320px){
+   body {background: black;
+        color: turquoise;
+        text-align: center
+}
+}
+@media only screen and (min-width: 768px){
+    body{background:forestgreen;
+        background-image: center;
+
+    }
+}
+@media only screen and (max-width: 768px) {
+    [class*="col-"] {
+        width: 100%;
+    }}
+@media only screen and (min-width: 320px){
+        background: black;
+        color: turquoise;
+        text-align: center
+     }

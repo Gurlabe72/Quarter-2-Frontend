@@ -1,4 +1,5 @@
 
+//=========================DRIVERS=========================//
 const getDrivers= () => {
 let list = document.querySelector('#the-list')
 list.innerHTML = '' 
@@ -16,6 +17,7 @@ const doDrivers = () => {
     let button = document.querySelector('#the-drivers-button')
     button.addEventListener('click', getDrivers)
 };
+//=========================HAZARDS=========================//
 const getHazards = () => {
     let list = document.querySelector('#the-list')
       list.innerHTML = '' 
@@ -32,7 +34,7 @@ const doHazards = () => {
     let button = document.querySelector('#the-hazards-button')
     button.addEventListener('click', getHazards)
 };
-
+//=========================ACCIDENTS=========================//
 const getAccidents = () => {
     let list = document.querySelector('#the-list')
     list.innerHTML = '' 
@@ -49,7 +51,7 @@ const doAccidents = () => {
     let button = document.querySelector('#the-accidents-button')
     button.addEventListener('click', getAccidents)
 }
-
+//=========================LISTENER=========================//
 document.addEventListener(
     'DOMContentLoaded', 
     function(){
